@@ -19,7 +19,7 @@ router.get('', function(req, res, next) {
 
 
 /* GET All data. */
-
+/* /v1/api/organizer
 router.get('/api/organizers', function(req, res, next) {
   res.json(organizers);
   
@@ -136,7 +136,7 @@ router.post("/api/organizers",(req,res,next)=>{
 
 
 
-/* POST New organizer */
+/* Update organizer */
 
 router.put("/api/organizers/:id",(req,res,next)=>{
   
@@ -163,6 +163,8 @@ router.put("/api/organizers/:id",(req,res,next)=>{
   res.json(organizers)
 })
 
+
+/* Delete organizer */
 
 router.delete("/api/organizers/:id",(req,res,next)=>{
   
