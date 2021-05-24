@@ -7,7 +7,7 @@ var organizer = require("./added_db.json");
 var organizers = require("./db.json");
 
 
-directery = __dirname.replace('/routes', '')
+//directery = __dirname.replace('/routes/v1', '')
 
 
 /* GET home page. */
@@ -19,7 +19,7 @@ router.get('', function(req, res, next) {
 
 
 /* GET All data. */
-/* /v1/api/organizer
+/* /v1/api/organizer*/
 router.get('/api/organizers', function(req, res, next) {
   res.json(organizers);
   
