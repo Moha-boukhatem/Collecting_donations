@@ -13,7 +13,7 @@ var organizers = require("./db.json");
 /* GET home page. */
 
 router.get('', function(req, res, next) {
-  res.render("home",{data:"Collecting Payments & Donations API"});
+  res.render("home",{data:organizers});
   
 });
 
@@ -21,8 +21,8 @@ router.get('', function(req, res, next) {
 /* GET All data. */
 /* /v1/api/organizer*/
 router.get('/api/organizers', function(req, res, next) {
-  res.json(organizers);
-  
+  //res.json(organizers);
+  res.render("users",{data:organizers});
 });
 
 
@@ -34,8 +34,7 @@ router.get("/api/organizers/:id",(req,res,next) => {
     return req.params.id == organizer.id
 })
   if (!data) res.render("home",{data:"The Organizer ID was not Found"});
-
-  res.json(data)
+  res.render("user",{data:data});
     
 })
 
@@ -63,7 +62,7 @@ router.get("/api/organizers/:id/collections/:idAds",(req,res,next) => {
     return req.params.idAds == don.id })
 
   if (!don) res.render("home",{data:"The Collection Ad ID was not Found"});
-  res.json(don)
+  res.render("donors",{data:don});
   
 })
 
